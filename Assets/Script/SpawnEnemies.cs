@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnEnemies : NetworkBehaviour
 {
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject[] enemyPrefabs;
 
     [SerializeField] float spawnInterval = 1f;
 
@@ -30,10 +30,12 @@ public class SpawnEnemies : NetworkBehaviour
 
     void SpawnEnemy() 
     {
+        int indexEnemy = Random.Range(0, enemyPrefabs.Length);
+
         float randomX = Random.Range(-8, 9);
         Vector2 spawnPosition = new Vector2(randomX, transform.position.y);
-        GameObject enemy = 
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        GameObject enemy =
+            Instantiate(enemyPrefabs[indexEnemy], spawnPosition, Quaternion.identity);
         enemy.GetComponent<Rigidbody2D>().velocity = Vector2.down * enemySpeed;
         NetworkServer.Spawn(enemy);
         Destroy(enemy, 10f);

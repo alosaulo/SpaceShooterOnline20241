@@ -11,7 +11,7 @@ public class ColorChanger : NetworkBehaviour
     public override void OnStartServer()
     {
         base.OnStartServer();
-        playerColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f); ;
+        playerColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
     }
 
     void SetColor(Color oldColor, Color newColor)
