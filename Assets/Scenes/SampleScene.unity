@@ -555,7 +555,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  enemyPrefab: {fileID: 2997542613525812443, guid: 2cae724be09fe7c4aa0317eac90bfed6, type: 3}
+  enemyPrefabs:
+  - {fileID: 2997542613525812443, guid: 2cae724be09fe7c4aa0317eac90bfed6, type: 3}
   spawnInterval: 1
   enemySpeed: 1
 --- !u!4 &762989514
